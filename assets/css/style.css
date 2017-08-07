@@ -1,0 +1,165 @@
+
+/* HTML ======================================================================================= */
+
+body {
+	background-image: url(greenBlock.jpg);
+	background-repeat: repeat;
+	z-index: 1;
+}
+
+/* Bootstrap Classes ======================================================================================= */
+
+.container {
+	margin:0;
+	padding: 0;
+}
+
+.row {
+	margin:0;
+	padding: 0;
+}
+
+
+/* Custom Classes ======================================================================================= */
+#display {
+width: 100%;
+position:absolute;
+text-align: center;
+display:block;
+}
+
+.sunnyHills{
+	position: fixed;
+	display: block
+	z-index: -1;
+	width: 100%;
+}
+
+.hud {
+	position: fixed;
+	width: 50%;
+	height: auto;
+	margin: 0% auto;
+	bottom: 10%; 
+	left: 0;
+	right: 0;
+}
+
+.monsters { 
+	padding:10px;
+	padding-left: 10%;
+	height: 100%;
+}
+
+
+#fight {
+	position: relative;
+	text-align: center;
+	margin-top: 5%;
+}
+
+#voodoo {
+	position: relative;
+	float:left;
+	display: block;
+	top:0;
+	padding-right: 5%;
+}
+
+#easter {
+	position: relative;
+	float:left;
+	display: block;
+	top:0;
+	padding-right: 5%;
+}
+
+#toxic {
+	position: relative;
+	float:left;
+	display:block;
+	top:0;
+	padding-right: 5%;
+}
+
+#screamer {
+	position: relative;
+	float:left;
+	display:block;
+	top:0;
+	padding-right: 5%;
+	margin-top: -5px;
+}
+
+#invman {
+	position: relative;
+	float:left;
+	display:block;
+	top:0;
+	padding-right: 5%;
+}
+
+#hair {
+	position: relative;
+	float:left;
+	display:block;
+	top:0;
+	padding-right: 5%;
+}
+
+#fish {
+	position: relative;
+	float:left;
+	display:block;
+	top:0;
+	padding-right: 5%;
+}
+
+#turtle2 {
+	display: block;
+	visibility: hidden;
+}
+
+.none {
+	font-size: 50%;
+}
+
+/* Module Classes ======================================================================================= */
+
+h4 {
+font-family: 'Russo One', sans-serif;
+}
+
+.modal-body {
+font-family: 'Hind Siliguri', sans-serif;
+}
+
+.btn-primary {
+	font-family: 'Russo One', sans-serif;
+	text-align: center;
+	width:100%;
+	border-color:transparent; 
+	box-shadow: 5px 5px 5px #888888;
+}
+
+
+/* @MEDIA ======================================================================================= */
+
+@media screen and (max-width: 640px) {
+
+    .hud {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 641px) {
+    .hud {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+    .hud {
+        width: 650px;
+    }
+}
