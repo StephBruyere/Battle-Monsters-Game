@@ -37,7 +37,8 @@ display:block;
 
 .hud {
 	position: fixed;
-	width: 50%;
+	text-align: center;
+	width: 100%;
 	height: auto;
 	margin: 0% auto;
 	bottom: 10%; 
@@ -46,83 +47,89 @@ display:block;
 }
 
 .monsters { 
-	padding:10px;
-	padding-left: 10%;
-	height: 100%;
+	width: 100%;
 }
 
 
 #fight {
-	position: relative;
+	position: fixed;
 	text-align: center;
-	margin-top: 5%;
+	width: 100%;
+	height: auto;
+	margin: 0% auto;
+	top: 10%; 
+	left: 0;
+	right: 0;
 }
 
 #voodoo {
 	position: relative;
-	float:left;
-	display: block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
+	overflow: none;
 }
 
 #easter {
 	position: relative;
-	float:left;
-	display: block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
+	overflow: none;
+
 }
 
 #toxic {
 	position: relative;
-	float:left;
-	display:block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
+	overflow: none;
+
 }
 
 #screamer {
 	position: relative;
-	float:left;
-	display:block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
-	margin-top: -5px;
+	overflow: none;
+
 }
 
 #invman {
 	position: relative;
-	float:left;
-	display:block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
+	overflow: none;
+
 }
 
 #hair {
 	position: relative;
-	float:left;
-	display:block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
+	overflow: none;
+
 }
 
 #fish {
 	position: relative;
-	float:left;
-	display:block;
+	display: inline-block;
+	vertical-align: bottom;
 	top:0;
 	padding-right: 5%;
+	overflow: none;
 }
 
-#turtle2 {
-	display: block;
-	visibility: hidden;
-}
-
-.none {
-	font-size: 50%;
-}
 
 /* Module Classes ======================================================================================= */
 
@@ -148,6 +155,7 @@ font-family: 'Hind Siliguri', sans-serif;
 @media screen and (max-width: 640px) {
 
     .hud {
+    	height:100px;
         width: 350px;
     }
 }
