@@ -1,5 +1,5 @@
 //onload
-/*    $(document).ready(function() {
+    $(document).ready(function() {
         $("#myModal").modal('show');
     });
 
@@ -8,25 +8,22 @@
     });
 
 //globals
-/*
- 
-*/
-var monsterName = $("#voodoo, #toxic, #easter, #screamer, #invman, #hair, #fish");
+
+var monsterArray = [voodoo, toxic, easter, screamer, invman, hair, fish];
 var avatar; 
-var setChar = false;
-var userSelection;
 var enemy;
+var setChar = false;
 var computerEnemy = false;
 
 //=======================================================
 
 var voodooMonster = new monster("Voodoo", 125,50,10,true)
-var easterMonster = new monster("Voodoo", 100,75,10,true)
-var toxicMonster = new monster("Voodoo", 150,25,10,true)
-var screamerMonster = new monster("Voodoo", 1,50,10,true)
-var invmanMonster = new monster("Voodoo", 75,50,20,true)
-var hairMonster = new monster("Voodoo", 175,10,10,true)
-var fishMonster = new monster("Voodoo", 100,25,25,true)
+var easterMonster = new monster("Easter Island", 100,75,10,true)
+var toxicMonster = new monster("Toxic Waster", 150,25,10,true)
+var screamerMonster = new monster("Screamer", 1,50,10,true)
+var invmanMonster = new monster("Invisible Man", 75,50,20,true)
+var hairMonster = new monster("Bad Hair Day", 175,10,10,true)
+var fishMonster = new monster("Fish Bob", 100,25,25,true)
 
 
 function monster(name, health, attack, counter, alive) {
@@ -37,136 +34,135 @@ function monster(name, health, attack, counter, alive) {
     this.alive = alive;
 }
 
+//Sets to next monster or YOU WIN =======================================================
+
+function enemyMonster (enemy) {
+for (var i = 0; i < monsterArray.length; i++) {
+  if ([i] === 0) $("#winLose").append("You Win");}
+  if ([i] >= monsterArray.length) {
+  i++};
+}
+
+function playerMonster (avatar) {
+ if ( monster.health == 0) $("#winLose").append ("You Lose");}
+
 
 // Setting User Selection and Enemy Selection =======================================================
 
-
-         if (setChar == false) {
-          $('#voodoo').on("click", function() {
-              var avatar = $("#voodoo");
+// Voodoo  =======================================================
+         
+          $('#voodoo').on("click", function(voodoo) {
+            if (setChar == false) {
+             var avatar = voodoo;
               setChar = true;
-              console.log(avatar);
-              console.log(setChar);
-          });
-      } 
+              console.log(setChar);}
 
-      else if (setChar == true) {
-          $('#voodoo').on("click", function() {
-              if (computerEnemy == false) {
-                  chooseOpponent(voodoo);
-                  console.log(setChar+"1");
-              }
-          });
-
-          function chooseOpponent(voodoo) {
-              if (computerEnemy == false) {
+            else if (setChar == false && computerEnemy == false) {
                   var enemy = voodoo;
                   computerEnemy = true;
-                  console.log(enemy);
+                  console.log(computerEnemy);
               }
-          }
-      } else {
+            });  
 
-      }
+
+// Easter  =======================================================
+
+          $('#easter').on("click", function(easter) {
+            if (setChar == false) {
+              setChar = true;
+              var avatar = easter;
+              console.log(setChar);}
+
+            else if (setChar == true && computerEnemy == false) {
+                  var enemy = easter;
+                  computerEnemy = true;
+                  console.log(computerEnemy);
+              }
+            });                            
 
 // Toxic  =======================================================
 
-      if (setChar == false) {
-          $('#toxic').on("click", function() {
-              var avatar = $("#toxic");
+          $('#toxic').on("click", function(toxic) {
+            if (setChar == false) {
               setChar = true;
-              console.log(avatar);
-               console.log(setChar+"2");
-          });
-       }
-      else if (setChar == true) {
-          $('#toxic').on("click", function() {
-              if (computerEnemy == false) {
-                  chooseOpponent(toxic);
-                   console.log(setChar+"3");
-              }
-          });
+              var avatar = toxic;
+              console.log(setChar);}
 
-          function chooseOpponent(toxic) {
-              if (computerEnemy == false) {
+            else if (setChar == true && computerEnemy == false) {
                   var enemy = toxic;
                   computerEnemy = true;
-                  console.log(enemy);
+                  console.log(computerEnemy);
               }
-          }
-      } else {
+            }); 
 
-      }
 
-//function enemyMonster (enemy) {
-//  var life = (var i = this.health; i >= 0 , counter)
-//
+// Screamer  =======================================================
+
+          $('#screamer').on("click", function(easter) {
+            if (setChar == false) {
+              setChar = true;
+              var avatar = screamer;
+              console.log(setChar);}
+
+            else if (setChar == true && computerEnemy == false) {
+                  var enemy = screamer;
+                  computerEnemy = true;
+                  console.log(computerEnemy);
+              }
+            });           
+
+// Invman  =======================================================
+
+          $('#easter').on("click", function(easter) {
+            if (setChar == false) {
+              setChar = true;
+              var avatar = easter;
+              console.log(setChar);}
+
+            else if (setChar == true && computerEnemy == false) {
+                  var enemy = easter;
+                  computerEnemy = true;
+                  console.log(computerEnemy);
+              }
+            }); 
+
+// Hair  =======================================================
+
+          $('#hair').on("click", function(hair) {
+            if (setChar == false) {
+              setChar = true;
+              var avatar = hair;
+              console.log(setChar);}
+
+            else if (setChar == true && computerEnemy == false) {
+                  var enemy = hair;
+                  computerEnemy = true;
+                  console.log(computerEnemy);
+              }
+            });           
+// Fish  =======================================================
+
+          $('#fish').on("click", function(fish) {
+            if (setChar == false) {
+              setChar = true;
+              var avatar = fish;
+              console.log(setChar);}
+
+            else if (setChar == true && computerEnemy == false) {
+                  var enemy = fish;
+                  computerEnemy = true;
+                  console.log(computerEnemy);
+              }
+            }); 
+
+
+
+
 
 
 
 // make if statement later for positioning. If voodoo and toxic (x,y)
 
-function animations () {
-
-      $("#voodoo").on("click", function() { 
-        $("#voodoo").animate({ top: 10});
-        $("#voodoo").animate({ height: "325px"},1200);
-        $(".voodoo2").animate({ width: "55px"},1200);
-        $("#voodoo").animate({ left: 0});
-      });
-
-      $("#toxic").on("click", function() { 
-        $("#toxic").animate({ top: 10});
-        $("#toxic").animate({ height: "325px"},1200);
-        $(".toxic2").animate({ width: "55px"},1200);
-        $("#toxic").animate({ left: 0});
-      });
-
-        $("#easter").on("click", function() { 
-        $("#easter").animate({ top: 10});
-        $("#easter").animate({ height: "325px"},1200);
-        $(".easter2").animate({ width: "55px"},1200);
-        $("#easter").animate({ left: 0});
-      });
-
-        $("#screamer").on("click", function() { 
-        $("#screamer").animate({ top: 10});
-        $("#screamer").animate({ height: "325px"},1200);
-        $(".screamer2").animate({ width: "55px"},1200);
-        $("#screamer").animate({ left: 0});
-      });
-
-        $("#screamer").on("click", function() { 
-        $("#screamer").animate({ top: 10});
-        $("#screamer").animate({ height: "325px"},1200);
-        $(".screamer2").animate({ width: "55px"},1200);
-        $("#screamer").animate({ left: 0});
-      });
-
-        $("#invman").on("click", function() { 
-        $("#invman").animate({ top: 10});
-        $("#invman").animate({ height: "325px"},1200);
-        $(".invman2").animate({ width: "55px"},1200);
-        $("#invman").animate({ left: 0});
-      });
-
-        $("#fish").on("click", function() { 
-        $("#fish").animate({ top: 10});
-        $("#fish").animate({ height: "325px"},1200);
-        $(".fish2").animate({ width: "55px"},1200);
-        $("#fish").animate({ right: 0});
-      });
-
-        $("#hair").on("click", function() { 
-        $("#hair").animate({ top: 10});
-        $("#hair").animate({ height: "325px"},1200);
-        $(".hair2").animate({ width: 55px"},1200);
-        $("#hair").animate({ right: 0});
-      });
-
-}
-
-animations ();
 
 /*
 
