@@ -59,7 +59,17 @@ display:block;
 	top: 10%; 
 	left: 0;
 	right: 0;
+}
 
+#winLose {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin: 0% auto;
+	top: 10%; 
+	left: 0;
+	right: 0;
 }
 
 #voodoo {

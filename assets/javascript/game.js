@@ -34,7 +34,7 @@ function monster(name, health, attack, counter, alive) {
     this.alive = alive;
 }
 
-//Sets to next monster or YOU WIN =======================================================
+//Sets to next monster / Win / Lose =======================================================
 
 function enemyMonster (enemy) {
 for (var i = 0; i < monsterArray.length; i++) {
