@@ -1,21 +1,30 @@
-//onload
-    $(document).ready(function() {
+//onload 
+ /*   $(document).ready(function() {
         $("#myModal").modal('show');
     });
 
     $('.start').on('click', function() {
         $('.modal').modal('hide');
     });
+*/
+$(document).ready(function() {
 
 //globals
 
-var monsterArray = [voodoo, toxic, easter, screamer, invman, hair, fish];
 var avatar; 
 var enemy;
 var setChar = false;
 var computerEnemy = false;
 
 //=======================================================
+
+function monster(name, health, attack, counter, alive) {
+    this.name = name;
+    this.health = health;
+    this.attack = attack += 10;
+    this.counter = counter;
+    this.alive = alive;
+
 
 var voodooMonster = new monster("Voodoo", 125,50,10,true)
 var easterMonster = new monster("Easter Island", 100,75,10,true)
@@ -25,14 +34,27 @@ var invmanMonster = new monster("Invisible Man", 75,50,20,true)
 var hairMonster = new monster("Bad Hair Day", 175,10,10,true)
 var fishMonster = new monster("Fish Bob", 100,25,25,true)
 
+var monsterArray = [voodooMonster, toxicMonster, easterMonster, screamerMonster, invmanMonster, hairMonster, fishMonster];
 
-function monster(name, health, attack, counter, alive) {
-    this.name = name;
-    this.health = health;
-    this.attack = attack += 10;
-    this.counter = counter;
-    this.alive = alive;
+//Attack and Defense functions =======================================================
+
+
+var attacker = monster.avatar;
+var defender = monster.enemy;
+
+function test () {
+console.log(enemy);
 }
+test ();
+
+/*function attackCommand (attacker, defender) {
+  (this.attack - this.health == defender.health);
+  console.log(enemy.health);
+}
+attackCommand ();
+*/
+} 
+
 
 //Sets to next monster / Win / Lose =======================================================
 
@@ -51,30 +73,37 @@ function playerMonster (avatar) {
 
 // Voodoo  =======================================================
          
-          $('#voodoo').on("click", function(voodoo) {
+
+
+          $('#voodoo').on("click", function(voodooMonster) {
             if (setChar == false) {
-             var avatar = voodoo;
               setChar = true;
               console.log(setChar);}
 
             else if (setChar == false && computerEnemy == false) {
-                  var enemy = voodoo;
+                  var enemy = voodooMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
-            });  
-
-
+          
+          function setAvatar () {
+            if (setChar === true); {
+              var avatar = voodooMonster;
+              monster (voodooMonster);
+            }
+          }
+          setAvatar ();
+  });  
 // Easter  =======================================================
 
-          $('#easter').on("click", function(easter) {
+          $('#easter').on("click", function(easterMonster) {
             if (setChar == false) {
               setChar = true;
-              var avatar = easter;
+              var avatar = easterMonster;
               console.log(setChar);}
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = easter;
+                  var enemy = easterMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
@@ -82,14 +111,14 @@ function playerMonster (avatar) {
 
 // Toxic  =======================================================
 
-          $('#toxic').on("click", function(toxic) {
+          $('#toxic').on("click", function(toxicMonster) {
             if (setChar == false) {
               setChar = true;
-              var avatar = toxic;
+              var avatar = toxicMonster;
               console.log(setChar);}
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = toxic;
+                  var enemy = toxicMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
@@ -98,14 +127,14 @@ function playerMonster (avatar) {
 
 // Screamer  =======================================================
 
-          $('#screamer').on("click", function(easter) {
+          $('#screamer').on("click", function(screamerMonster) {
             if (setChar == false) {
               setChar = true;
-              var avatar = screamer;
+              var avatar = screamerMonster;
               console.log(setChar);}
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = screamer;
+                  var enemy = screamerMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
@@ -113,14 +142,14 @@ function playerMonster (avatar) {
 
 // Invman  =======================================================
 
-          $('#easter').on("click", function(easter) {
+          $('#easter').on("click", function(easterMonster) {
             if (setChar == false) {
               setChar = true;
-              var avatar = easter;
+              var avatar = easterMonster;
               console.log(setChar);}
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = easter;
+                  var enemy = easterMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
@@ -128,35 +157,35 @@ function playerMonster (avatar) {
 
 // Hair  =======================================================
 
-          $('#hair').on("click", function(hair) {
+          $('#hair').on("click", function(hairMonster) {
             if (setChar == false) {
               setChar = true;
-              var avatar = hair;
+              var avatar = hairMonster;
               console.log(setChar);}
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = hair;
+                  var enemy = hairMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
             });           
 // Fish  =======================================================
 
-          $('#fish').on("click", function(fish) {
+          $('#fish').on("click", function(fishMonster) {
             if (setChar == false) {
               setChar = true;
-              var avatar = fish;
+              var avatar = fishMonster;
               console.log(setChar);}
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = fish;
+                  var enemy = fishMonster;
                   computerEnemy = true;
                   console.log(computerEnemy);
               }
             }); 
 
 
-
+ });
 
 
 
@@ -235,4 +264,23 @@ if health = health -= than //if health is current health -1 than run counter att
 
 
 // 
+*/
+
+//Takes the character that was clicked and attacks it. 
+ /* function attack(attacker, defender){
+   
+    //Changes the objects values and updates the DOM to show the player. 
+        attacker.health = attacker.health - defender.attack; 
+        attacker.attack = attacker.attack + attacker.baseAttack;
+    //Updates the DOM to show the values of the players health, attack power etc. 
+      $("#attackerZone").html("<div id = 'player'>"+attacker.image+"<br><h4>"+attacker.name+"<br>Attack Power: "+attacker.attack+"<br>Health: "+attacker.health+"</h4></div>");
+      $('#defenderZone').html("<div id = 'opponent'>"+defender.image+"<br><h4>"+defender.name+"<br>Attack Power: "+defender.attack+"<br>Health: "+defender.health+"</h4></div>");
+      if(defender.health <= 0){
+        attack(attacker, defender);
+      }
+    }
+  
+      }
+    }
+
 */
