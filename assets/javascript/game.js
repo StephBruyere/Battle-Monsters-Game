@@ -17,25 +17,6 @@ var setChar = false;
 var computerEnemy = false;
 
 //=======================================================
-/*
-function monster(name, health, attack, counter, alive) {
-    this.name = name;
-    this.health = health;
-    this.attack = attack += 10;
-    this.counter = counter;
-    this.alive = alive;
-
-
-var voodooMonster = new monster("Voodoo", 125,50,10,true)
-var easterMonster = new monster("Easter Island", 100,75,10,true)
-var toxicMonster = new monster("Toxic Waster", 150,25,10,true)
-var screamerMonster = new monster("Screamer", 1,50,10,true)
-var invmanMonster = new monster("Invisible Man", 75,50,20,true)
-var hairMonster = new monster("Bad Hair Day", 175,10,10,true)
-var fishMonster = new monster("Fish Bob", 100,25,25,true)
-
-}
-*/
 
 var monsterArray = [
     voodooMonster = {
@@ -95,22 +76,21 @@ var monsterArray = [
 
 ];
 
-/*var monsterArray = [voodooMonster, toxicMonster, easterMonster, screamerMonster, invmanMonster, hairMonster, fishMonster]; */
+var monsterArray = [voodooMonster, toxicMonster, easterMonster, screamerMonster, invManMonster, hairMonster, fishMonster];
 
 
 
 //Attack and Defense functions =======================================================
 
 
-/*var attacker = avatar;
-var defender = enemy;*/
 
-/*function attackCommand (attacker, defender) {
+
+function attackCommand (avatar, enemy) {
   (this.attack - this.health == defender.health);
   console.log(enemy.health);
 }
 attackCommand ();
-*/
+
 
 
 
@@ -162,27 +142,161 @@ function playerMonster (avatar) {
 
           $('#easter').on("click", function() {
             if (setChar == false) {
-              setChar = true;
-              console.log(setChar);}
+              avatar = setAvatar ();
+            }
 
             else if (setChar == true && computerEnemy == false) {
-                  var enemy = this.easterMonster;
-                  computerEnemy = true;
-                  console.log(computerEnemy);
-                  console.log(enemy);
-              }
-          
-          function setEasterAvatar (easterMonster) {
-            if (setChar === true); {
-            var avatar = this.easterMonster;
-            console.log (avatar);
+              enemy =  setEnemy();
             }
+          
+          function setAvatar () {
+            setChar =  true;
+            return this.easterMonster;
+            console.log(int);
           }
-          setEasterAvatar ();
-        });
+            
+            function setEnemy () { 
+            computerEnemy = true;
+            return this.easterMonster;
+          }
+          console.log(setChar);
+          console.log(computerEnemy);
+          console.log(enemy);
+          console.log (avatar);
+        });         
+   
+   // Easter  =======================================================
 
+          $('#toxic').on("click", function() {
+            if (setChar == false) {
+              avatar = setAvatar ();
+            }
 
+            else if (setChar == true && computerEnemy == false) {
+              enemy =  setEnemy();
+            }
+          
+          function setAvatar () {
+            setChar =  true;
+            return this.toxicMonster;
+            console.log(int);
+          }
+            
+            function setEnemy () { 
+            computerEnemy = true;
+            return this.toxicMonster;
+          }
+          console.log(setChar);
+          console.log(computerEnemy);
+          console.log(enemy);
+          console.log (avatar);
+        }); 
 
+   // Screamer  =======================================================
+
+          $('#screamer').on("click", function() {
+            if (setChar == false) {
+              avatar = setAvatar ();
+            }
+
+            else if (setChar == true && computerEnemy == false) {
+              enemy =  setEnemy();
+            }
+          
+          function setAvatar () {
+            setChar =  true;
+            return this.screamerMonster;
+            console.log(int);
+          }
+            
+            function setEnemy () { 
+            computerEnemy = true;
+            return this.screamerMonster;
+          }
+          console.log(setChar);
+          console.log(computerEnemy);
+          console.log(enemy);
+          console.log (avatar);
+        }); 
+
+   // Easter  =======================================================
+
+          $('#invman').on("click", function() {
+              if (setChar == false) {
+                  avatar = setAvatar();
+              } else if (setChar == true && computerEnemy == false) {
+                  enemy = setEnemy();
+              }
+
+              function setAvatar() {
+                  setChar = true;
+                  return this.invManMonster;
+                  console.log(int);
+              }
+
+              function setEnemy() {
+                  computerEnemy = true;
+                  return this.InvManMonster;
+              }
+              console.log(setChar);
+              console.log(computerEnemy);
+              console.log(enemy);
+              console.log(avatar);
+          });
+
+             // Easter  =======================================================
+
+          $('#hair').on("click", function() {
+            if (setChar == false) {
+              avatar = setAvatar ();
+            }
+
+            else if (setChar == true && computerEnemy == false) {
+              enemy =  setEnemy();
+            }
+          
+          function setAvatar () {
+            setChar =  true;
+            return this.hairMonster;
+            console.log(int);
+          }
+            
+            function setEnemy () { 
+            computerEnemy = true;
+            return this.hairMonster;
+          }
+          console.log(setChar);
+          console.log(computerEnemy);
+          console.log(enemy);
+          console.log (avatar);
+        }); 
+
+   // Easter  =======================================================
+
+          $('#fish').on("click", function() {
+            if (setChar == false) {
+              avatar = setAvatar ();
+            }
+
+            else if (setChar == true && computerEnemy == false) {
+              enemy =  setEnemy();
+            }
+          
+          function setAvatar () {
+            setChar =  true;
+            return this.fishMonster;
+            console.log(int);
+          }
+            
+            function setEnemy () { 
+            computerEnemy = true;
+            return this.fishcMonster;
+          }
+          console.log(setChar);
+          console.log(computerEnemy);
+          console.log(enemy);
+          console.log (avatar);
+        }); 
 
 
 
