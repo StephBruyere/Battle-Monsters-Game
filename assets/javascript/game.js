@@ -22,14 +22,14 @@ var computerEnemy = false;
           var avAttack 
           var avCounter
           var avAlive 
-
+          var avHP
 
           var coName 
           var coHealth
           var coAttack 
           var coCounter 
           var coAlive 
-
+          var coHP
 
 
 //=======================================================
@@ -37,6 +37,7 @@ var computerEnemy = false;
 
     var VoodooMonster = {
         ID:".voodoo2",
+        HP:".hpVoodoo",
         name: "Voodoo Doll",
         health: 120,
         attack: 10,
@@ -46,8 +47,9 @@ var computerEnemy = false;
 
           Attack:function(){
           coHealth -= avAttack + Math.floor(coHealth / 4);
-
-          (console.log)(coHealth)
+          $(avHP).html( "health " + avHealth + "<br> Attack: " + avAttack);
+          $(coHP).html( "health " + coHealth + " <br> Attack: " + coAttack);
+          console.log(coHealth);
           //avHealth -= coCounter;
           if (coHealth <= 0){
             $('.winLose').removeClass("potterCloak");
@@ -84,10 +86,11 @@ var computerEnemy = false;
           avCounter = this.counter;
           avAlive = this.alive;
           avID = this.ID;
+          avHP = this.hp;
           $(avID).toggle();
           setChar = true;
           console.log(avHealth);
-          $(".hpVoodoo").html( "health " + avHealth + "<br> Attack: " + avAttack)
+          $(avHP).html( "health " + avHealth + "<br> Attack: " + avAttack)
           
         },
 
@@ -98,6 +101,7 @@ var computerEnemy = false;
           coCounter = this.counter;
           coAlive = this.alive;
           coID = this.ID;
+          coHP = this.HP;
           $('.easter2').addClass("potterCloak");
           $('.toxic2').addClass("potterCloak")
           $('.screamer2').addClass("potterCloak")
@@ -110,7 +114,7 @@ var computerEnemy = false;
           $(avID).show();
           computerEnemy = true;
           console.log(coName);
-          $(".hpVoodoo").html( "health " + coHealth + " <br> Attack: " + coAttack)
+          $(coHP).html( "health " + coHealth + " <br> Attack: " + coAttack)
         }
 
     }
@@ -122,22 +126,12 @@ var computerEnemy = false;
         attack: 10,
         counter: 15,
         alive: true,
-
-
-        Attack:function(){
-          coHealth -= avAttack + Math.floor(coHealth / 4)
-          console.log(coHealth)
-          //avHealth -= coCounter;
-          if (coHealth <= 0){
-            console.log("You Win!")
-            $(coID).hide();
-            computerEnemy = false;
-            console.log("choose new enemy")
-          }
-        },
+        HP: '.hpEaster',
 
         Attack:function(){
           coHealth -= avAttack;
+          $(avHP).html( "health " + avHealth + "<br> Attack: " + avAttack);
+          $(coHP).html( "health " + coHealth + " <br> Attack: " + coAttack);
           console.log(coHealth)
           //avHealth -= coCounter;
           if (coHealth <= 0){
@@ -162,9 +156,11 @@ var computerEnemy = false;
           avCounter = this.counter;
           avAlive = this.alive;
           avID = this.ID;
+          avHP = this.HP;
            $(avID).toggle();
           setChar = true;
           console.log(avName);
+          $(avHP).html( "health " + avHealth + "<br> Attack: " + avAttack);
         },
 
         setComputer:function(){
@@ -174,6 +170,7 @@ var computerEnemy = false;
           coCounter = this.counter;
           coAlive = this.alive;
           coID = this.ID;
+          coHP = this.HP;
           $('.voodoo2').addClass("potterCloak");
           $('.toxic2').addClass("potterCloak")
           $('.screamer2').addClass("potterCloak")
@@ -183,6 +180,7 @@ var computerEnemy = false;
      //   $(coID).toggle();
           $(avID).removeClass("potterCloak");
           $(avID).show();
+          $(coHP).html( "health " + coHealth + " <br> Attack: " + coAttack);
           computerEnemy = true;
           console.log(coName);
         }
@@ -245,6 +243,7 @@ var computerEnemy = false;
           $(avID).show();
           computerEnemy = true;
           console.log(coName);
+          $(".winLose").addClass("potterCloak")
         }
     }
 
