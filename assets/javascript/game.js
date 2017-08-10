@@ -16,125 +16,488 @@ var enemy;
 var setChar = false;
 var computerEnemy = false;
 
+
+          var avName 
+          var avHealth
+          var avAttack 
+          var avCounter
+          var avAlive 
+
+
+          var coName 
+          var coHealth
+          var coAttack 
+          var coCounter 
+          var coAlive 
+
+
+
 //=======================================================
 
-var monsterArray = [
-    voodooMonster = {
+
+    var VoodooMonster = {
+        ID:".voodoo2",
         name: "Voodoo Doll",
+        health: 120,
+        attack: 10,
+        counter: 15,
+        alive: true,
+        hp:".hpVoodoo",
+
+          Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4);
+
+          (console.log)(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            $('.winLose').removeClass("potterCloak");
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+            $('.voodoo2').removeClass("potterCloak");
+            $('.toxic2').removeClass("potterCloak")
+            $('.screamer2').removeClass("potterCloak")
+            $('.invman2').removeClass("potterCloak")
+            $('.easter2').removeClass("potterCloak")
+            $('.fish2').removeClass("potterCloak")
+            $('.hair2').removeClass("potterCloak")
+          } else if (avHealth <= 0) { 
+            $('.LoseWin').removeClass("potterCloak");
+            console.log("You Lose!")
+            computerEnemy = false;
+            console.log("choose new enemy")
+            $('.voodoo2').removeClass("potterCloak");
+            $('.toxic2').removeClass("potterCloak")
+            $('.screamer2').removeClass("potterCloak")
+            $('.invman2').removeClass("potterCloak")
+            $('.easter2').removeClass("potterCloak")
+            $('.fish2').removeClass("potterCloak")
+            $('.hair2').removeClass("potterCloak")
+             }
+        },
+
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+          $(avID).toggle();
+          setChar = true;
+          console.log(avHealth);
+          $(".hpVoodoo").html( "health " + avHealth + "<br> Attack: " + avAttack)
+          
+        },
+
+        setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.easter2').addClass("potterCloak");
+          $('.toxic2').addClass("potterCloak")
+          $('.screamer2').addClass("potterCloak")
+          $('.invman2').addClass("potterCloak")
+          $('.hair2').addClass("potterCloak")
+          $('.fish2').addClass("potterCloak")
+     //   $(coID).toggle();
+
+          $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+          $(".hpVoodoo").html( "health " + coHealth + " <br> Attack: " + coAttack)
+        }
+
+    }
+
+    var EasterMonster = {
+        ID:'.easter2',
+        name: "Easter Island",
         health: 125,
         attack: 10,
         counter: 15,
         alive: true,
-    },
 
-    easterMonster = {
-        name: "Easter Island",
-        health: 100,
-        attack: 75,
-        counter: 10,
-        alive: true,
-    },
 
-    toxicMonster = {
-        name: "Toxic Waster",
-        health: 150,
-        attack: 25,
-        counter: 10,
-        alive: true,
-    },
+        Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4)
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+          }
+        },
 
-    screamerMonster = {
-        name: "The Screamer",
-        health: 100,
-        attack: 75,
-        counter: 10,
-        alive: true,
-    },
-    invManMonster = {
-        name: "Invisable Man",
-        health: 75,
-        attack: 50,
-        counter: 20,
-        alive: true,
-    },
+        Attack:function(){
+          coHealth -= avAttack;
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+            $('.voodoo2').removeClass("potterCloak");
+            $('.toxic2').removeClass("potterCloak")
+            $('.screamer2').removeClass("potterCloak")
+            $('.invman2').removeClass("potterCloak")
+            $('.easter2').removeClass("potterCloak")
+            $('.fish2').removeClass("potterCloak")
+            $('.hair2').removeClass("potterCloak")
+          }
+        },
 
-    hairMonster = {
-        name: "Bad Hair Day",
-        health: 175,
-        attack: 10,
-        counter: 10,
-        alive: true,
-    },
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+           $(avID).toggle();
+          setChar = true;
+          console.log(avName);
+        },
 
-    fishMonster = {
-        name: "Fish Bob",
-        health: 100,
-        attack: 75,
-        counter: 10,
-        alive: true,
+        setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.voodoo2').addClass("potterCloak");
+          $('.toxic2').addClass("potterCloak")
+          $('.screamer2').addClass("potterCloak")
+          $('.invman2').addClass("potterCloak")
+          $('.hair2').addClass("potterCloak")
+          $('.fish2').addClass("potterCloak")
+     //   $(coID).toggle();
+          $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+        }
     }
 
-];
+    var ToxicMonster = {
+        ID:'.toxic2',
+        name: "Toxic Waster",
+        health: 125,
+        attack: 10,
+        counter: 15,
+        alive: true,
 
-var monsterArray = [voodooMonster, toxicMonster, easterMonster, screamerMonster, invManMonster, hairMonster, fishMonster];
+        Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4)
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+         $('.voodoo2').removeClass("potterCloak");
+          $('..toxic2').removeClass("potterCloak")
+           $('.screamer2').removeClass("potterCloak")
+          $('.invman2').removeClass("potterCloak")
+           $('.easter2').removeClass("potterCloak")
+          $('.fish2').removeClass("potterCloak")
+           $('.hair2').removeClass("potterCloak")
+          }
+        },
+
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+           $(avID).hide();
+          setChar = true;
+          console.log(avName);
+        },
+
+          setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.voodoo2').addClass("potterCloak");
+          $('.hair2').addClass("potterCloak")
+           $('.screamer2').addClass("potterCloak")
+          $('.invman2').addClass("potterCloak")
+           $('.easter2').addClass("potterCloak")
+          $('.fish2').addClass("potterCloak")
+     //     $(coID).toggle();
+          $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+        }
+    }
+
+        var ScreamerMonster = {
+        ID: '.screamer2', 
+        name: "The Screamer",
+        health: 125,
+        attack: 10,
+        counter: 15,
+        alive: true,
+
+        Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4)
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+         $('.voodoo2').removeClass("potterCloak");
+          $('.toxic2').removeClass("potterCloak")
+           $('.screamer2').removeClass("potterCloak")
+          $('.invman2').removeClass("potterCloak")
+           $('.easter2').removeClass("potterCloak")
+          $('.fish2').removeClass("potterCloak")
+           $('.hair2').removeClass("potterCloak")
+          }
+        },
+
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+           $(avID).hide();
+          setChar = true;
+          console.log(avName);
+        },
+
+           setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.voodoo2').addClass("potterCloak");
+          $('.toxic2').addClass("potterCloak")
+           $('.hair2').addClass("potterCloak")
+          $('.invman2').addClass("potterCloak")
+           $('.easter2').addClass("potterCloak")
+          $('.fish2').addClass("potterCloak")
+     //     $(coID).toggle();
+         $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+        }
+    }
+        var InvManMonster = {
+        ID: '.invman2',  
+        name: "Invisable Man",
+        health: 125,
+        attack: 10,
+        counter: 15,
+        alive: true,
+
+        Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4)
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+           $('.winLose').removeClass("potterCloak")
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+         $('.voodoo2').removeClass("potterCloak");
+          $('.toxic2').removeClass("potterCloak")
+           $('.screamer2').removeClass("potterCloak")
+          $('.invman2').removeClass("potterCloak")
+           $('.easter2').removeClass("potterCloak")
+          $('.fish2').removeClass("potterCloak")
+           $('.hair2').removeClass("potterCloak")
+          }
+        },
+
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+           $(avID).hide();
+          setChar = true;
+          console.log(avName);
+        },
+
+    setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.voodoo2').addClass("potterCloak");
+          $('.toxic2').addClass("potterCloak")
+           $('.screamer2').addClass("potterCloak")
+          $('.hair2').addClass("potterCloak")
+           $('.easter2').addClass("potterCloak")
+          $('.fish2').addClass("potterCloak")
+     //     $(coID).toggle();
+          $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+        }
+    }
+
+    var HairMonster = {
+        ID: ".hair2",
+        name: "Screaming Hair",
+        health: 125,
+        attack: 10,
+        counter: 15,
+        alive: true,
 
 
+        Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4)
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+         $('.voodoo2').removeClass("potterCloak");
+          $('.toxic2').removeClass("potterCloak")
+           $('.screamer2').removeClass("potterCloak")
+          $('.invman2').removeClass("potterCloak")
+           $('.easter2').removeClass("potterCloak")
+          $('.fish2').removeClass("potterCloak")
+           $('.hair2').removeClass("potterCloak")
+          }
+        },
 
-//Attack and Defense functions =======================================================
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+           $(avID).hide();
+          setChar = true;
+          console.log(avName);
+        },
 
+    setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.voodoo2').addClass("potterCloak");
+          $('.toxic2').addClass("potterCloak")
+           $('.screamer2').addClass("potterCloak")
+          $('.invman2').addClass("potterCloak")
+           $('.easter2').addClass("potterCloak")
+          $('.fish2').addClass("potterCloak")
+     //     $(coID).toggle();
+          $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+        }
+    }
 
+    var FishMonster = {
+        ID: '.fish2',
+        name: "Fish Bob",
+        health: 125,
+        attack: 10,
+        counter: 15,
+        alive: true,
 
+        Attack:function(){
+          coHealth -= avAttack + Math.floor(coHealth / 4)
+          console.log(coHealth)
+          //avHealth -= coCounter;
+          if (coHealth <= 0){
+            console.log("You Win!")
+            $(coID).hide();
+            computerEnemy = false;
+            console.log("choose new enemy")
+          }
+        },
 
-function attackCommand (avatar, enemy) {
-  (this.attack - this.health == defender.health);
-  console.log(enemy.health);
-}
-attackCommand ();
+        setAvatar:function(){
+          avName = this.name;
+          avHealth = this.health;
+          avAttack = this.attack;
+          avCounter = this.counter;
+          avAlive = this.alive;
+          avID = this.ID;
+           $(avID).hide();
+          setChar = true;
+          console.log(avName);
+        },
 
-
-
-
-//Sets to next monster / Win / Lose =======================================================
-/*
-function enemyMonster (enemy) {
-for (var i = 0; i < monsterArray.length; i++) {
-  if ([i] === 0) $("#winLose").append("You Win");}
-  if ([i] >= monsterArray.length) {
-  i++};
-}
-
-function playerMonster (avatar) {
- if ( monster.health == 0) $("#winLose").append ("You Lose");}
-*/
-
-
-// Setting User Selection and Enemy Selection =======================================================
+     setComputer:function(){
+          coName = this.name;
+          coHealth = this.health;
+          coAttack = this.attack;
+          coCounter = this.counter;
+          coAlive = this.alive;
+          coID = this.ID;
+          $('.voodoo2').addClass("potterCloak");
+          $('.toxic2').addClass("potterCloak")
+           $('.screamer2').addClass("potterCloak")
+          $('.invman2').addClass("potterCloak")
+           $('.easter2').addClass("potterCloak")
+          $('.hair2').addClass("potterCloak")
+     //     $(coID).toggle();
+          $(avID).removeClass("potterCloak");
+          $(avID).show();
+          computerEnemy = true;
+          console.log(coName);
+        }
+    }
 
 // Voodoo  =======================================================
          
           $('#voodoo').on("click", function() {
             if (setChar == false) {
-              avatar = setAvatar ();
+              avatar = VoodooMonster.setAvatar();
+              console.log("Avatar Set!")
             }
 
             else if (setChar == true && computerEnemy == false) {
-              enemy =  setEnemy();
+              enemy =  VoodooMonster.setComputer();
+              console.log("Enemy Ready!")
             }
-          
-          function setAvatar () {
-            setChar =  true;
-            return this.voodooMonster;
-            console.log(int);
-          }
-            
-            function setEnemy () { 
-            computerEnemy = true;
-            return this.voodooMonster;
-          }
-          console.log(setChar);
-          console.log(computerEnemy);
-          console.log(enemy);
-          console.log (avatar);
+            else{
+              VoodooMonster.Attack();
+              console.log("Attack!");
+              }
         });         
    
                                
@@ -142,261 +505,110 @@ function playerMonster (avatar) {
 
           $('#easter').on("click", function() {
             if (setChar == false) {
-              avatar = setAvatar ();
+              avatar = EasterMonster.setAvatar();
+              console.log("Avatar Set!")
             }
 
             else if (setChar == true && computerEnemy == false) {
-              enemy =  setEnemy();
+              enemy =  EasterMonster.setComputer();
+              console.log("Enemy Ready!")
             }
-          
-          function setAvatar () {
-            setChar =  true;
-            return this.easterMonster;
-            console.log(int);
+            else{
+              EasterMonster.Attack();
+              console.log("Attack!")
           }
-            
-            function setEnemy () { 
-            computerEnemy = true;
-            return this.easterMonster;
-          }
-          console.log(setChar);
-          console.log(computerEnemy);
-          console.log(enemy);
-          console.log (avatar);
-        });         
+        });        
    
-   // Easter  =======================================================
+   // Toxic  =======================================================
 
           $('#toxic').on("click", function() {
             if (setChar == false) {
-              avatar = setAvatar ();
+              avatar = ToxicMonster.setAvatar();
+              console.log("Avatar Set!")
             }
 
             else if (setChar == true && computerEnemy == false) {
-              enemy =  setEnemy();
+              enemy =  ToxicMonster.setComputer();
+              console.log("Enemy Ready!")
             }
-          
-          function setAvatar () {
-            setChar =  true;
-            return this.toxicMonster;
-            console.log(int);
+            else{
+              ToxicMonster.Attack();
+              console.log("Attack!")
           }
-            
-            function setEnemy () { 
-            computerEnemy = true;
-            return this.toxicMonster;
-          }
-          console.log(setChar);
-          console.log(computerEnemy);
-          console.log(enemy);
-          console.log (avatar);
-        }); 
-
+        });     
    // Screamer  =======================================================
 
           $('#screamer').on("click", function() {
             if (setChar == false) {
-              avatar = setAvatar ();
+              avatar = ScreamerMonster.setAvatar();
+              console.log("Avatar Set!")
             }
 
             else if (setChar == true && computerEnemy == false) {
-              enemy =  setEnemy();
+              enemy =  ScreamerMonster.setComputer();
+              console.log("Enemy Ready!")
             }
-          
-          function setAvatar () {
-            setChar =  true;
-            return this.screamerMonster;
-            console.log(int);
+            else{
+              ScreamerMonster.Attack();
+              console.log("Attack!")
           }
-            
-            function setEnemy () { 
-            computerEnemy = true;
-            return this.screamerMonster;
-          }
-          console.log(setChar);
-          console.log(computerEnemy);
-          console.log(enemy);
-          console.log (avatar);
-        }); 
+        });     
 
    // Easter  =======================================================
 
           $('#invman').on("click", function() {
-              if (setChar == false) {
-                  avatar = setAvatar();
-              } else if (setChar == true && computerEnemy == false) {
-                  enemy = setEnemy();
-              }
+            if (setChar == false) {
+              avatar = InvManMonster.setAvatar();
+              console.log("Avatar Set!")
+            }
 
-              function setAvatar() {
-                  setChar = true;
-                  return this.invManMonster;
-                  console.log(int);
-              }
-
-              function setEnemy() {
-                  computerEnemy = true;
-                  return this.InvManMonster;
-              }
-              console.log(setChar);
-              console.log(computerEnemy);
-              console.log(enemy);
-              console.log(avatar);
-          });
-
+            else if (setChar == true && computerEnemy == false) {
+              enemy =  InvManMonster.setComputer();
+              console.log("Enemy Ready!")
+            }
+            else{
+              InvManMonster.Attack();
+              console.log("Attack!")
+          }
+        });     
              // Easter  =======================================================
 
           $('#hair').on("click", function() {
             if (setChar == false) {
-              avatar = setAvatar ();
+              avatar = HairMonster.setAvatar();
+              console.log("Avatar Set!")
             }
 
             else if (setChar == true && computerEnemy == false) {
-              enemy =  setEnemy();
+              enemy =  HairMonster.setComputer();
+              console.log("Enemy Ready!")
             }
-          
-          function setAvatar () {
-            setChar =  true;
-            return this.hairMonster;
-            console.log(int);
+            else{
+              HairMonster.Attack();
+              console.log("Attack!")
           }
-            
-            function setEnemy () { 
-            computerEnemy = true;
-            return this.hairMonster;
-          }
-          console.log(setChar);
-          console.log(computerEnemy);
-          console.log(enemy);
-          console.log (avatar);
-        }); 
+        });     
 
-   // Easter  =======================================================
+   // Fish   =======================================================
 
-          $('#fish').on("click", function() {
+             $('#fish').on("click", function() {
             if (setChar == false) {
-              avatar = setAvatar ();
+              avatar = FishMonster.setAvatar();
+              console.log("Avatar Set!")
             }
 
             else if (setChar == true && computerEnemy == false) {
-              enemy =  setEnemy();
+              enemy =  FishMonster.setComputer();
+              console.log("Enemy Ready!")
             }
-          
-          function setAvatar () {
-            setChar =  true;
-            return this.fishMonster;
-            console.log(int);
+            else{
+              FishMonster.Attack();
+              console.log("Attack!")
           }
-            
-            function setEnemy () { 
-            computerEnemy = true;
-            return this.fishcMonster;
-          }
-          console.log(setChar);
-          console.log(computerEnemy);
-          console.log(enemy);
-          console.log (avatar);
-        }); 
-
+        });    
 
 
        }); /* closing the on ready function */
            
 
 
-
-
-// make if statement later for positioning. If voodoo and toxic (x,y)
-
-
-/*
-
-//onload set music to on/ create button to set music to off
-
-$()
-// onclick set object as avatar
-//on click move object to position x and y, 
-//change the height to 100%
-// set user selection to active
-
-
-//Seperate onclick function
-//if userSelection = 0, than set to computer Enemy
-//onclick user will set computerEnemy select object to heros 1-6 
-	//if computerEnemy ==  UserSelection than computerEnemy +=1.
-//set same inner html changes to computerEnemy as UserSelection
-//create variable Active = UserSelection and computerEnemy 
-// change inner html of alert element to opacity 100%, "Fight"
-
-
-
-      takeDamage: function(attacks)
-        {
-          var x = attacks;
-          var result = attacks;
-          for(var i = 0; i < x; i++)
-          {
-            if(Math.random() > 0.6667)
-            {
-              alert(this.name + " blocked one of the hits!");
-              result--;
-            }
-
-//set function for avatar
-
-// loop user selection if health is >  0, attack - health
-
-
-
-// function for attacks -Needs an onclick seperate from the above,
-//	going to need to set the start function to a variable that can be turned off. 	
-
-// on hit enemy - health = inner html : health
-
-//function for counter attack
-if health = health -= than //if health is current health -1 than run counter attack 
-// on hit avatar - health = inner html : health
-
-//function to set new computer target if computer enemy health = 0
-
-// You win / you lose functions
-
-// function to set if computer enemies available = 0 alert you win! 
-
-//function to set restart (Play again?)
-
-// if health > 0 , set alive to true
-//	else if health =< 0 set alive to false
-		
-// if alive = false  YOU LOSE
-//	else- do nothing
-
-//function for alive?
-
-
-
-// 
-
-
-
-// 
-*/
-
-//Takes the character that was clicked and attacks it. 
- /* function attack(attacker, defender){
-   
-    //Changes the objects values and updates the DOM to show the player. 
-        attacker.health = attacker.health - defender.attack; 
-        attacker.attack = attacker.attack + attacker.baseAttack;
-    //Updates the DOM to show the values of the players health, attack power etc. 
-      $("#attackerZone").html("<div id = 'player'>"+attacker.image+"<br><h4>"+attacker.name+"<br>Attack Power: "+attacker.attack+"<br>Health: "+attacker.health+"</h4></div>");
-      $('#defenderZone').html("<div id = 'opponent'>"+defender.image+"<br><h4>"+defender.name+"<br>Attack Power: "+defender.attack+"<br>Health: "+defender.health+"</h4></div>");
-      if(defender.health <= 0){
-        attack(attacker, defender);
-      }
-    }
-  
-      }
-    }
-
-*/

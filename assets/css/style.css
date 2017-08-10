@@ -61,15 +61,28 @@ display:block;
 	right: 0;
 }
 
-#winLose {
-	position: relative;
+.winLose {
+	position: absolute;
 	text-align: center;
 	width: 100%;
 	height: auto;
 	margin: 0% auto;
-	top: 10%; 
+	top: 25%; 
 	left: 0;
 	right: 0;
+}
+
+.winLose {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin: 0% auto;
+	top: 25%; 
+	left: 0;
+	right: 0;
+	font-family: 'Russo One', sans-serif;
+	font-size: 40px;
 }
 
 #voodoo {
@@ -174,4 +187,85 @@ font-family: 'Hind Siliguri', sans-serif;
         width: 650px;
     }
     
+}
+.potterCloak{
+	display:none;
+}
+
+.hpVoodoo{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+	
+}
+
+.hpEaster{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+	
+}
+
+.hpToxic{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+margin-bottom: 10%;
+	
+}
+
+.hpScreamer{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+	
+}
+
+.hpInvman{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+	
+}
+
+.hpHair{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+	
+}
+
+.hpFish{
+background-color: white;
+border-color: black;
+border-width: 4px;
+border-style: solid;
+font-family: 'Russo One', sans-serif;
+font-size: 12px;
+padding:5px;
+	
 }
