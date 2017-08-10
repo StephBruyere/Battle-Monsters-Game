@@ -45,17 +45,19 @@ $(document).ready(function() {
         HP: '.hpVoodoo',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             console.log(coHealth);
             //avHealth -= coCounter;
             if (coHealth <= 0) {
-                $('.winLose').removeClass("potterCloak");
+                
                 console.log("You Win!")
                 $(coID).hide();
                 computerEnemy = false;
+                $('.winLose').removeClass("potterCloak");
                 console.log("choose new enemy")
                 $('.voodoo2').removeClass("potterCloak");
                 $('.toxic2').removeClass("potterCloak")
@@ -113,6 +115,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
@@ -127,7 +130,8 @@ $(document).ready(function() {
         HP: '.hpEaster',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
@@ -195,6 +199,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
@@ -210,7 +215,8 @@ $(document).ready(function() {
         HP: '.hpToxic',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
@@ -278,6 +284,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
@@ -292,7 +299,8 @@ $(document).ready(function() {
         HP: '.hpScreamer',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
@@ -360,6 +368,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
@@ -374,7 +383,8 @@ $(document).ready(function() {
         HP: '.hpInvman',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
@@ -442,6 +452,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
@@ -457,7 +468,8 @@ $(document).ready(function() {
         HP: '.hpHair',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
@@ -525,6 +537,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
@@ -539,7 +552,8 @@ $(document).ready(function() {
         HP: '.hpFish',
 
         Attack: function() {
-            coHealth -= avAttack + avAttack + 25;
+            avAttack += Math.floor(Math.random() * 50) +25;
+            coHealth -= avAttack;
             avHealth -= coAttack;
             $(avHP).html("health " + avHealth + "<br> Attack: " + avAttack);
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
@@ -607,6 +621,7 @@ $(document).ready(function() {
             $(coHP).html("health " + coHealth + " <br> Attack: " + coAttack);
             computerEnemy = true;
             console.log(coName);
+            $('.winLose').addClass("potterCloak");
         }
     }
 
